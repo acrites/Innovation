@@ -1,0 +1,107 @@
+<LinearLayout android:id="@+id/player_summary"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              tools:context="com.example.android.innovation.PlayerSummary">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player Name"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="8"
+        android:rowCount="2"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp">
+
+        <ImageView
+            style="@style/SummaryIcon"
+            android:contentDescription="@string/small_castle"
+            android:src="@drawable/small_castle"/>
+
+        <ImageView
+            style="@style/SummaryIcon"
+            android:contentDescription="@string/small_coin"
+            android:src="@drawable/small_coin"/>
+
+        <ImageView
+            style="@style/SummaryIcon"
+            android:contentDescription="@string/small_leaf"
+            android:src="@drawable/small_leaf"/>
+
+        <ImageView
+            style="@style/SummaryIcon"
+            android:contentDescription="@string/small_lightbulb"
+            android:src="@drawable/small_lightbulb"/>
+
+        <ImageView
+            style="@style/SummaryIcon"
+            android:contentDescription="@string/small_factory"
+            android:src="@drawable/small_factory"/>
+
+        <ImageView
+            style="@style/SummaryIcon"
+            android:contentDescription="@string/small_clock"
+            android:src="@drawable/small_clock"/>
+
+        <ImageView
+            style="@style/SummaryIcon"
+            android:contentDescription="@string/small_score"
+            android:src="@drawable/small_score"/>
+
+        <TextView
+            style="@style/SummaryIcon"
+            android:text="A"/>
+
+        <TextView
+            android:id="@+id/castle_count"
+            style="@style/SummaryValue"
+            android:text="0"/>
+
+        <TextView
+            android:id="@+id/coin_count"
+            style="@style/SummaryValue"
+            android:text="0"/>
+
+        <TextView
+            android:id="@+id/leaf_count"
+            style="@style/SummaryValue"
+            android:text="0"/>
+
+        <TextView
+            android:id="@+id/lightbulb_count"
+            style="@style/SummaryValue"
+            android:text="0"/>
+
+        <TextView
+            android:id="@+id/factory_count"
+            style="@style/SummaryValue"
+            android:text="0"/>
+
+        <TextView
+            android:id="@+id/clock_count"
+            style="@style/SummaryValue"
+            android:text="0"/>
+
+        <TextView
+            android:id="@+id/score_count"
+            style="@style/SummaryValue"
+            android:text="0"/>
+
+        <TextView
+            android:id="@+id/achievement_count"
+            style="@style/SummaryValue"
+            android:text="0"/>
+
+    </GridLayout>
+
+</LinearLayout>

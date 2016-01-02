@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Innovation</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="small_castle">small castle</string>
+    <string name="small_coin">small coin</string>
+    <string name="small_leaf">small leaf</string>
+    <string name="small_lightbulb">small light bulb</string>
+    <string name="small_factory">small factory</string>
+    <string name="small_clock">small clock</string>
+    <string name="small_score">small score</string>
+
+</resources>
