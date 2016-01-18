@@ -1,53 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
+    android:background="@color/tan"
     tools:context="com.example.android.innovation.MainActivity"
-    android:id="@+id/activity_main">
+    android:gravity="center_vertical|center_horizontal">
 
+    <TextView
+        style="@style/TitleText"
+        android:textColor="@color/brown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"/>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_game"
+        android:layout_margin="8dp"/>
 
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:name="com.example.android.innovation.PlayerSummary"
-            android:id="@+id/fragment_player_1"
-            tools:layout="@layout/fragment_player_summary"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resume_game"
+        android:layout_margin="8dp"/>
 
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:name="com.example.android.innovation.PlayerSummary"
-            android:id="@+id/fragment_player_2"
-            tools:layout="@layout/fragment_player_summary"/>
-
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:name="com.example.android.innovation.PlayerSummary"
-            android:id="@+id/fragment_player_3"
-            tools:layout="@layout/fragment_player_summary"/>
-
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:name="com.example.android.innovation.PlayerSummary"
-            android:id="@+id/fragment_player_4"
-            tools:layout="@layout/fragment_player_summary"/>
-    </LinearLayout>
-
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_weight="5"
-        android:layout_height="match_parent">
-
-    </FrameLayout>
 </LinearLayout>

@@ -18,10 +18,10 @@ public class DrawPilesTest {
         }
 
         // Add a card to age 1 and 2
-        testPiles.mAges.get(0).add(new Card(TEST_STRING_1));
-        testPiles.mAges.get(1).add(new Card(TEST_STRING_2));
+        testPiles.returnCard(new Card(TEST_STRING_1, 1));
+        testPiles.returnCard(new Card(TEST_STRING_2, 2));
 
-        Card testCard = new Card();
+        Card testCard;
 
         // Try to draw the age 1 card.
         testCard = testPiles.draw(1);

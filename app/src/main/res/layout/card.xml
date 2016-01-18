@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/card_main_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="2dp"
+    android:background="@color/red">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card_name"
+        android:layout_toRightOf="@+id/upper_left_icon"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                style="@style/DogmaIcon"
+                android:src="@drawable/small_castle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="4dp"
+                android:text="Draw and reveal a 1.  If it has a castle, repeat."
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                style="@style/DogmaIcon"
+                android:src="@drawable/small_castle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="4dp"
+                android:text="Do some more stuff."
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/card_name"
+        style="@style/CardName"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="metalworking"/>
+
+    <TextView
+        android:id="@+id/card_age"
+        style="@style/CardName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="1"/>
+
+    <ImageView
+        android:id="@+id/upper_left_icon"
+        style="@style/CardIcon"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/small_castle"
+        />
+
+    <ImageView
+        android:id="@+id/bottom_left_icon"
+        style="@style/CardIcon"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/small_castle"/>
+
+    <ImageView
+        android:id="@+id/bottom_center_icon"
+        style="@style/CardIcon"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/small_castle"/>
+
+    <ImageView
+        android:id="@+id/bottom_right_icon"
+        style="@style/CardIcon"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/small_castle"/>
+</RelativeLayout>

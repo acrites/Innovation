@@ -31,7 +31,7 @@
         <ImageView
             style="@style/SummaryIcon"
             android:contentDescription="@string/small_coin"
-            android:src="@drawable/small_coin"/>
+            android:src="@drawable/small_crown"/>
 
         <ImageView
             style="@style/SummaryIcon"

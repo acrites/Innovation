@@ -1,26 +1,27 @@
 package com.example.android.innovation;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import java.io.Serializable;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  */
-public class Card implements HasDogma {
+public class Card implements Serializable {
 
-    public static final int NUM_COLORS = 5;
-    public static final int RED = 0;
-    public static final int BLUE = 1;
-    public static final int GREEN = 2;
-    public static final int YELLOW = 3;
-    public static final int PURPLE = 4;
-
-    private Symbol mUpper_Left;
-    private Symbol mLower_Left;
-    private Symbol mLower_Center;
-    private Symbol mLower_Right;
+    private Symbol mUpperLeft;
+    private Symbol mBottomLeft;
+    private Symbol mBotomCenter;
+    private Symbol mBottomRight;
     private int mAge;
-    private int mColor;
+    private CardColor mColor;
     private String mName;
     private List<Dogma> mDogmas;
 
@@ -29,16 +30,20 @@ public class Card implements HasDogma {
     }
 
     public Card(String name) {
+        this(name, 1);
+    }
+
+    public Card(String name, int age) {
         this(Symbol.NO_ICON, Symbol.NO_ICON, Symbol.NO_ICON, Symbol.NO_ICON,
-                0, RED, name, new ArrayList<Dogma>());
+                age, CardColor.RED, name, new ArrayList<Dogma>());
     }
 
     public Card(Symbol ul, Symbol ll, Symbol lc, Symbol lr,
-                int age, int color, String name, ArrayList<Dogma> dogmas) {
-        mUpper_Left = ul;
-        mLower_Left = ll;
-        mLower_Center = lc;
-        mLower_Right = lr;
+                int age, CardColor color, String name, ArrayList<Dogma> dogmas) {
+        mUpperLeft = ul;
+        mBottomLeft = ll;
+        mBotomCenter = lc;
+        mBottomRight = lr;
 
         if (isValidAge(age)) {
             mAge = age;
@@ -46,25 +51,10 @@ public class Card implements HasDogma {
             throw new InvalidParameterException("Invalid Card age");
         }
 
-        if (isValidColor(color)) {
-            mColor = color;
-        } else {
-            throw new InvalidParameterException("Invalid Card color");
-        }
-
+        mColor = color;
         mName = name;
         mDogmas = new ArrayList<>();
         mDogmas.addAll(dogmas);
-    }
-
-    @Override
-    public void doDogma() {
-
-    }
-
-    @Override
-    public int hashCode() {
-        return mName.hashCode();
     }
 
     @Override
@@ -83,7 +73,7 @@ public class Card implements HasDogma {
         return mName;
     }
 
-    public int getColor() {
+    public CardColor getColor() {
         return mColor;
     }
 
@@ -91,12 +81,73 @@ public class Card implements HasDogma {
         return mAge;
     }
 
-    private boolean isValidColor(int color) {
-        return color == RED || color == BLUE || color == GREEN || color == YELLOW || color == PURPLE;
-    }
-
-    private boolean isValidAge(int age) {
+    public boolean isValidAge(int age) {
         return age > 0 && age < 11;
     }
-}
 
+    public static int getSmallIconResource(Symbol symbol) {
+        switch (symbol) {
+            case CASTLE:
+                return R.drawable.small_castle;
+            case CLOCK:
+                return R.drawable.small_clock;
+            case CROWN:
+                return R.drawable.small_crown;
+            case FACTORY:
+                return R.drawable.small_factory;
+            case LEAF:
+                return R.drawable.small_leaf;
+            case LIGHTBULB:
+                return R.drawable.small_lightbulb;
+            default:
+                throw new InvalidParameterException("Invalid symbol");
+        }
+    }
+
+    public int getCardColorResource() {
+        switch (mColor) {
+            case RED:
+                return R.color.red;
+            case BLUE:
+                return R.color.blue;
+            case GREEN:
+                return R.color.green;
+            case YELLOW:
+                return R.color.yellow;
+            case PURPLE:
+                return R.color.purple;
+            default:
+                throw new InvalidParameterException("Invalid color");
+        }
+    }
+
+    public View getView(LayoutInflater inflater, ViewGroup container) {
+
+        View view = inflater.inflate(R.layout.card, container, false);
+
+        TextView ageView = (TextView)view.findViewById(R.id.card_age);
+        ageView.setText(String.valueOf(mAge));
+
+        RelativeLayout mainLayout = (RelativeLayout)view.findViewById(R.id.card_main_layout);
+        mainLayout.setBackgroundColor(getCardColorResource());
+
+        TextView nameView = (TextView)view.findViewById(R.id.card_name);
+        nameView.setText(mName);
+
+        ImageView upperLeftIconView = (ImageView)view.findViewById(R.id.upper_left_icon);
+        upperLeftIconView.setImageResource(getSmallIconResource(mUpperLeft));
+
+        ImageView bottomLeftIconView = (ImageView)view.findViewById(R.id.bottom_left_icon);
+        bottomLeftIconView.setImageResource(getSmallIconResource(mBottomLeft));
+
+        ImageView bottomCenterIconView = (ImageView)view.findViewById(R.id.bottom_center_icon);
+        bottomCenterIconView.setImageResource(getSmallIconResource(mBotomCenter));
+
+        ImageView bottomRightIconView = (ImageView)view.findViewById(R.id.bottom_right_icon);
+        bottomRightIconView.setImageResource(getSmallIconResource(mBottomRight));
+
+        // Now set the dogmas
+
+        return view;
+    }
+}

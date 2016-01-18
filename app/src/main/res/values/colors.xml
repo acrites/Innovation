@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="blue" type="color">#44b4ff</item>
+    <item name="purple" type="color">#a06ef9</item>
+    <item name="green" type="color">#8bc34a</item>
+    <item name="yellow" type="color">#faee0a</item>
+    <item name="red" type="color">#ff6464</item>
+    <item name="white" type="color">#ffffffff</item>
+    <item name="black" type="color">#ff000000</item>
+    <item name="tan" type="color">#fff6e0d4</item>
+    <item name="brown" type="color">#ffa53d05</item>
+
+    <integer-array name="card_colors">
+        <item>@color/red</item>
+        <item>@color/blue</item>
+        <item>@color/green</item>
+        <item>@color/yellow</item>
+        <item>@color/purple</item>
+    </integer-array>
+
+    <integer-array name="icons">
+        <item>@drawable/small_castle</item>
+    </integer-array>
+</resources>
